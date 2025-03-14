@@ -1,28 +1,12 @@
 import "./App.css";
-// import react hooks
-import { useState } from "react";
 // import components
 import Input from "./components/Input";
 import Summary from "./components/Summary";
+// import custom hook
+import useForm from "./customHooks/useForm";
 
 const App = () => {
-  const [inputValues, setInputValues] = useState({
-    fullname: null,
-    jobtitle: null,
-    email: null,
-    phone: null,
-    address: null,
-    summary: null,
-  });
-
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setInputValues((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
+  const { handleInput, inputValues } = useForm(); // utilizing custom hook so I can separate state logic from App structure
   return (
     <>
       <Input

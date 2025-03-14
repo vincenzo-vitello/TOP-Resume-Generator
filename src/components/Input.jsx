@@ -1,3 +1,5 @@
+// created abstraction for an input component. It receives an object with the attributes needed. This way I avoided creating multiple input components
+
 const Input = ({
   label,
   name,
