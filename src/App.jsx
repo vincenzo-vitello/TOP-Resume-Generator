@@ -1,12 +1,14 @@
+import { use } from "react";
 import "./App.css";
-import MultiStepForm from "./components/MultiStepForm";
+import { DOMContent } from "./components/DomContent";
 
-import { FromProvider } from "./context/FormContext";
+import { FormProvider, useFormContext } from "./context/FormContext";
+
 const App = () => {
   return (
-    <FromProvider>
-      <MultiStepForm />
-    </FromProvider>
+    <FormProvider>
+      <DOMContent />
+    </FormProvider>
   );
 };
 

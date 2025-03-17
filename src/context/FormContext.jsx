@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 const FormContext = createContext();
 
-export const FromProvider = ({ children }) => {
+export const FormProvider = ({ children }) => {
   const [formData, setFormData] = useState({});
 
   const updateFormData = (newData) => {
@@ -16,4 +16,10 @@ export const FromProvider = ({ children }) => {
   );
 };
 
-export const useFormContext = () => useContext(FormContext);
+export const useFormContext = () => {
+  const context = useContext(FormContext);
+  if (!context) {
+    throw new Error("useFormContext deve essere usato dentro FormProvider");
+  }
+  return context;
+};

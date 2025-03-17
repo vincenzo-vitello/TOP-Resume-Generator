@@ -3,14 +3,12 @@ import { useState } from "react";
 import PersonalInfos from "./PersonalInfos";
 import EducationInfos from "./EducationInfos";
 import Experience from "./Experience";
-// import ProgressBar from "./ProgressBar";
-import { useFormContext } from "../context/FormContext";
+import ProgressBar from "./ProgressBar";
 
 const steps = [PersonalInfos, EducationInfos, Experience];
 
-const MultiStepForm = () => {
+const MultiStepForm = ({ handleSubmit }) => {
   const [step, setStep] = useState(0);
-  const { formData } = useFormContext();
   const CurrentStep = steps[step];
 
   const nextStep = () => {
@@ -28,11 +26,10 @@ const MultiStepForm = () => {
         {step < steps.length - 1 ? (
           <button onClick={nextStep}>Avanti</button>
         ) : (
-          <button onClick={() => console.log("Dati finali:", formData)}>
-            Invia
-          </button>
+          <button onClick={() => handleSubmit()}>Invia</button>
         )}
       </div>
+      <ProgressBar step={step} totalSteps={steps.length} />
     </div>
   );
 };
