@@ -3,10 +3,57 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: rgb(72, 72, 72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+.content {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgb(106, 106, 106);
+}
+.multi-step-form {
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  height: 600px;
+  width: 600px;
+}
 
+.multi-step-form label * {
+  align-self: stretch;
+  width: 100%;
+  height: 2rem;
+  border-radius: 5px;
+}
+.multi-step-form label:last-of-type {
+  align-self: stretch;
+  grid-column: 1 / -1;
+}
+.multi-step-form label:last-of-type textarea {
+  min-height: 5rem;
+}
+.multi-step-form div:last-of-type {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: flex-end;
+}
+.multi-step-form div:last-of-type button {
+  width: 12ch;
+  height: 5ch;
+  border-radius: 5px;
+  background-color: rgb(120, 255, 120);
+}
 .input-label input,
 .input-label textarea {
   display: block;
+  margin-top: 10px;
+  padding: 10px;
 }
 .input-label span {
   font-size: 0.8rem;

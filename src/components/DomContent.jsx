@@ -10,7 +10,7 @@ export const DOMContent = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { formData } = useFormContext();
   return (
-    <div>
+    <div className="content">
       {isSubmitted ? (
         <Resume data={formData} />
       ) : (

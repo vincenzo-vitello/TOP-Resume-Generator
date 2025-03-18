@@ -19,18 +19,20 @@ const MultiStepForm = ({ handleSubmit }) => {
   };
 
   return (
-    <div>
-      <CurrentStep />
-      <div>
-        {step > 0 && <button onClick={prevStep}>Indietro</button>}
-        {step < steps.length - 1 ? (
-          <button onClick={nextStep}>Avanti</button>
-        ) : (
-          <button onClick={() => handleSubmit()}>Invia</button>
-        )}
-      </div>
+    <>
       <ProgressBar step={step} totalSteps={steps.length} />
-    </div>
+      <div className="multi-step-form">
+        <CurrentStep />
+        <div>
+          {step > 0 && <button onClick={prevStep}>Indietro</button>}
+          {step < steps.length - 1 ? (
+            <button onClick={nextStep}>Avanti</button>
+          ) : (
+            <button onClick={() => handleSubmit()}>Invia</button>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

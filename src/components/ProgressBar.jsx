@@ -12,7 +12,7 @@ const ProgressBar = ({ step, totalSteps }) => {
       <div
         style={{
           width: `${progress}%`,
-          background: "blue",
+          background: "rgb(120, 255, 120)",
           height: "100%",
           transition: "width .5s",
         }}
