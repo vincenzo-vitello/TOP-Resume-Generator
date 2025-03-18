@@ -4,17 +4,18 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(72, 72, 72);
+  background-color: rgb(37, 36, 36);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100dvh;
+  color: bisque;
 }
 .content {
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
-  background-color: rgb(106, 106, 106);
+  background-color: rgb(72, 72, 72);
 }
 .multi-step-form {
   padding: 20px 50px;
@@ -24,7 +25,14 @@ body {
   height: 600px;
   width: 600px;
 }
-
+.resume {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 .multi-step-form label * {
   align-self: stretch;
   width: 100%;
@@ -47,7 +55,7 @@ body {
   width: 12ch;
   height: 5ch;
   border-radius: 5px;
-  background-color: rgb(120, 255, 120);
+  background-color: rgb(255, 255, 255);
 }
 .input-label input,
 .input-label textarea {
