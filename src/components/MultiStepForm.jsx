@@ -28,7 +28,9 @@ const MultiStepForm = ({ handleSubmit }) => {
           {step < steps.length - 1 ? (
             <button onClick={nextStep}>Avanti</button>
           ) : (
-            <button onClick={() => handleSubmit()}>Invia</button>
+            <button className="submitBtn" onClick={() => handleSubmit()}>
+              Invia
+            </button>
           )}
         </div>
       </div>

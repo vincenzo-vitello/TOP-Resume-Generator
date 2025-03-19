@@ -11,17 +11,38 @@ body {
   height: 100dvh;
   color: bisque;
 }
+h1 {
+  margin-bottom: 20px;
+}
 .content {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 15px;
   overflow: hidden;
-  background-color: rgb(72, 72, 72);
+  border: 1px solid mediumslateblue;
+  padding: 20px;
+  position: relative;
+}
+.content::after {
+  content: "";
+  background: linear-gradient(transparent, rgb(255, 255, 255), transparent);
+  height: 400px;
+  width: 2px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  opacity: 0;
+  transition: top 800ms ease, opacity 800ms ease;
+}
+
+.content:hover::after {
+  top: 0;
+  opacity: 1;
 }
 .multi-step-form {
   padding: 20px 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  gap: 20px;
   height: 600px;
   width: 600px;
 }
@@ -55,15 +76,46 @@ body {
   width: 12ch;
   height: 5ch;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: mediumslateblue;
+  color: bisque;
+  border: none;
+  margin-left: 10px;
+}
+.multi-step-form div:last-of-type button:hover {
+  background: linear-gradient(45deg, #6a5acd, #8a2be2);
+}
+.multi-step-form h2 {
+  grid-column: 1/-1;
+}
+.submitBtn {
+  background: linear-gradient(45deg, #6a5acd, #8a2be2);
+  transition: 0.3s ease-in-out;
+}
+.submitBtn:hover {
+  cursor: pointer;
+  background: linear-gradient(-45deg, #6a5acd, #8a2be2) !important;
 }
 .input-label input,
 .input-label textarea {
   display: block;
   margin-top: 10px;
   padding: 10px;
+  border: 2px solid mediumslateblue;
+  background-color: dimgray;
+  color: bisque;
+}
+.input-label input::placeholder,
+.input-label textarea::placeholder {
+  color: bisque;
+  opacity: 0.6;
+}
+.input-label input:focus,
+.input-label textarea:focus {
+  outline: none;
+  border: 2px solid bisque;
 }
 .input-label span {
   font-size: 0.8rem;
   opacity: 0.7;
+  color: mediumslateblue;
 }

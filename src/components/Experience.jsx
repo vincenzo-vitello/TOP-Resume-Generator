@@ -33,6 +33,7 @@ const Experience = () => {
         name={"duration"}
         value={formData.duration || ""}
         label={"Duration"}
+        placeholder={"2021 - present"}
         onChange={handleChange}
       />
       <Input

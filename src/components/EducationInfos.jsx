@@ -12,17 +12,18 @@ const EducationInfos = () => {
   };
   return (
     <>
+      <h2>Education and titles</h2>
       <Input
         name={"degree"}
         value={formData.degree || ""}
-        placeholder={"John Doe"}
-        label={"Your name"}
+        placeholder={"Computer Science Degree"}
+        label={"Degree"}
         onChange={handleChange}
       />
       <Input
         name={"university"}
         value={formData.university || ""}
-        placeholder={"John Doe"}
+        placeholder={"Ivy League Uni"}
         label={"University"}
         onChange={handleChange}
       />

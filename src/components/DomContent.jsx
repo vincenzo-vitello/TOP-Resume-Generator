@@ -10,12 +10,15 @@ export const DOMContent = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { formData } = useFormContext();
   return (
-    <div className="content">
-      {isSubmitted ? (
-        <Resume data={formData} />
-      ) : (
-        <MultiStepForm handleSubmit={handleSubmitClick} />
-      )}
-    </div>
+    <>
+      <h1>Resume Builder</h1>
+      <div className="content">
+        {isSubmitted ? (
+          <Resume data={formData} />
+        ) : (
+          <MultiStepForm handleSubmit={handleSubmitClick} />
+        )}
+      </div>
+    </>
   );
 };

@@ -12,6 +12,8 @@ const PersonalInfos = () => {
   };
   return (
     <>
+      <h2>Personal Informations</h2>
+
       <Input
         name={"fullname"}
         value={formData.fullname || ""}
